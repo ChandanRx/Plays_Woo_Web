@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f3f0e8;
+  --surface: #e9e5da;
+  --surface-2: #ded8cc;
+  --text: #11100e;
+  --text-muted: #69645d;
+  --border: #11100e;
+  --accent: #ff6542;
+  --accent-hover: #e95434;
+  --accent-soft: #ffd7cc;
+  --accent-contrast: #ffffff;
+  --visual-bg: #ded8cc;
+  --background: var(--bg);
+  --foreground: var(--text);
+  --brand-primary: var(--accent);
+  --brand-primary-dark: var(--accent-hover);
+  --brand-secondary: var(--accent-soft);
+  --brand-accent: #9caf88;
+  --brand-muted: var(--text-muted);
+  --brand-surface: var(--surface);
+  --brand-card: var(--surface-2);
+  --brand-border: var(--border);
+  --font-display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.dark {
+  --bg: #11100e;
+  --surface: #1b1917;
+  --surface-2: #211b17;
+  --text: #f5f1e8;
+  --text-muted: #aaa49b;
+  --border: #4a4641;
+  --accent: #ff6542;
+  --accent-hover: #ff7a5c;
+  --accent-soft: #3a211b;
+  --accent-contrast: #ffffff;
+  --visual-bg: #211b17;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-dark: var(--brand-primary-dark);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-card: var(--brand-card);
+  --color-brand-border: var(--brand-border);
+  --font-sans: var(--font-plus-jakarta-sans);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body,
+header,
+section,
+footer,
+a,
+button,
+figure,
+div {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.045em;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
