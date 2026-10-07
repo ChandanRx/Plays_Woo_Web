@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plays Woo 🏀⚽🏏
 
-## Getting Started
+Plays Woo is a premium, community-driven sports platform designed to help you discover nearby games, meet local players, and organize matches instantly. Built with a heavy focus on editorial design, smooth animations, and top-tier mobile responsiveness.
 
-First, run the development server:
+## ✨ Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Cinematic Intro Animation:** A buttery-smooth GSAP-powered stage curtain reveal that plays once per session.
+- **Scroll Animations:** Sections elegantly fade and stagger into view as you scroll down the page, powered by GSAP ScrollTrigger.
+- **Responsive & Mobile-First:** Fluid typography (`clamp()`), strictly contained layouts (`overflow-x-hidden`), and horizontal scroll-snapping grids ensuring a flawless experience on devices as small as the iPhone SE.
+- **Discover & Map Views:** Visual representation of nearby games and active players in your vicinity.
+- **Host a Game:** Quick interface for booking turfs, selecting sports, setting times, and opening spots to the community.
+- **Light/Dark Mode Theme:** Fully dynamic theming system persisting your preference with strict layout safeguards to prevent hydration layout shifts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** [Next.js (App Router)](https://nextjs.org/)
+- **Language:** TypeScript
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations Engine:** [GSAP](https://gsap.com/) & `@gsap/react` (Timelines & ScrollTrigger)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Typography:** `Plus Jakarta Sans` (Body) & `Inter` (Cinematic Headers)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
+Make sure you have Node.js (v18+) and npm/yarn installed.
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository and navigate into the directory:
+   ```bash
+   git clone <your-repo-url>
+   cd plays_woo_web
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Design System
+
+Plays Woo relies on a robust set of CSS variables defined in `app/globals.css`. 
+- **Light Mode (`--bg: #f3f0e8`, `--text: #11100e`)**
+- **Dark Mode (`--bg: #11100e`, `--text: #f5f1e8`)**
+- **Brand Accent:** A striking high-contrast orange (`#ff6542`).
+
+## 📁 Project Structure
+
+- `app/` - Next.js App Router root layout, pages, and global stylesheet.
+- `components/`
+  - `PlaysGoIntro.tsx` - The cinematic GSAP initial page load experience.
+  - `marketing/` - Modular homepage sections (`Hero`, `MapSection`, `CreateGameSection`, etc.).
+  - `marketing/FadeIn.tsx` - Reusable GSAP ScrollTrigger wrapper for scroll animations.
+- `data/` - Hardcoded sports data and external image links (Unsplash).
+
+## 📝 License
+
+This project is licensed under the MIT License.
